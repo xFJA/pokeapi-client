@@ -12,7 +12,7 @@ const Card = ({ id, title, imageUrl }: CardProps) => {
     <div className={styles.root}>
       <h1>{id}</h1>
       <h2>{title}</h2>
-      <img src={imageUrl} />
+      <img alt="sprite" src={imageUrl} />
     </div>
   );
 };

@@ -10,16 +10,20 @@ export interface CardsGridProps {
 const CardsGrid = ({ pokemonList }: CardsGridProps) => {
   return (
     <div className={styles.root}>
-      {pokemonList.map((p) => {
+      {pokemonList.map((p, i) => {
         const { name, url } = p;
-        console.log(p);
         const id = getPokemonIdFromUrL(url);
 
         // TODO: Manage 'undefined' case (suggestion: show error in the card)
-        if (!id) return;
+        if (!id) return <></>;
 
         return (
-          <Card id={id} title={name} imageUrl={getPokemonImageUrlFromId(id)} />
+          <Card
+            key={i}
+            id={id}
+            title={name}
+            imageUrl={getPokemonImageUrlFromId(id)}
+          />
         );
       })}
     </div>
@@ -29,12 +33,7 @@ const CardsGrid = ({ pokemonList }: CardsGridProps) => {
 // TODO: Move to /utils folder and add unit tests
 const getPokemonIdFromUrL = (url: string): string | undefined => {
   const urlParts = url.split("/");
-  let pokemonId: string | undefined = undefined;
-
-  if (urlParts.length && urlParts[urlParts.length - 1]) {
-    pokemonId = urlParts[urlParts.length - 1].replace(/[^0-9]/g, "");
-  }
-
+  const pokemonId = urlParts.length ? urlParts[urlParts.length - 2] : undefined;
   return pokemonId;
 };
 
