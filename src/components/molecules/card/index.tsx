@@ -10,9 +10,9 @@ export interface CardProps {
 const Card = ({ id, title, imageUrl }: CardProps) => {
   return (
     <div className={styles.root}>
-      <h1>{id}</h1>
-      <h2>{title}</h2>
+      <h1>{`#${id}`}</h1>
       <img alt="sprite" src={imageUrl} />
+      <h2 className={styles.title}>{title}</h2>
     </div>
   );
 };
