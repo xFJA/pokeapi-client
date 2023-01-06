@@ -12,7 +12,6 @@ const ProgressBar = ({ value, limit, title }: ProgressBarProps) => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.title}>{title}</div>
       <div className={styles.content}>
         <div
           className={styles.valueContent}
@@ -21,6 +20,7 @@ const ProgressBar = ({ value, limit, title }: ProgressBarProps) => {
           <span className={styles.valueText}>{`${value}/${limit}`}</span>
         </div>
       </div>
+      <div className={styles.title}>{title}</div>
     </div>
   );
 };

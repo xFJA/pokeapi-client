@@ -18,7 +18,9 @@ const DetailsCard = ({ pokemonId }: DetailsCardProps) => {
       .catch((err) => console.error(err));
   }, []);
 
-  return <div className={styles.root}></div>;
+  return <div className={styles.root}>
+    
+  </div>;
 };
 
 export default DetailsCard;
