@@ -15,4 +15,5 @@ export const Default = Template.bind({});
 Default.args = {
   value: 60,
   limit: 255,
+  title: "hp",
 };
