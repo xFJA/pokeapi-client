@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { AllPokemonsPokeApiResponse } from "../models/pokemon";
+import { AllPokemonsPokeApiResponse, PokemonDetails } from "../models/pokemon";
 
 class PokeApi {
   axiosBase: AxiosInstance;
@@ -18,6 +18,17 @@ class PokeApi {
     try {
       const res = await this.axiosBase.get<AllPokemonsPokeApiResponse>(
         `/pokemon?offset=${offset}&limit=${limit}`
+      );
+      return res.data;
+    } catch (err) {
+      throw new Error(JSON.stringify(err));
+    }
+  };
+
+  getPokemon = async (id: string): Promise<PokemonDetails> => {
+    try {
+      const res = await this.axiosBase.get<PokemonDetails>(
+        `/pokemon/${id}`
       );
       return res.data;
     } catch (err) {
