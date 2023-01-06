@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pokemon } from "../../../models/pokemon";
 import Card from "../../molecules/card";
+import Modal from "../../molecules/modal";
+import DetailsCard from "../detailsCard";
 import styles from "./styles.module.scss";
 
 export interface CardsGridProps {
@@ -8,8 +10,17 @@ export interface CardsGridProps {
 }
 
 const CardsGrid = ({ pokemonList }: CardsGridProps) => {
+  const [pokemonIdSelected, setPokemonIdSelected] =
+    useState<string | undefined>(undefined);
+
   return (
     <div className={styles.root}>
+      {pokemonIdSelected && (
+        <Modal onBackdropClick={() => setPokemonIdSelected(undefined)}>
+          <DetailsCard pokemonId={pokemonIdSelected} />
+        </Modal>
+      )}
+
       {pokemonList.map((p, i) => {
         const { name, url } = p;
         const id = getPokemonIdFromUrL(url);
@@ -23,6 +34,7 @@ const CardsGrid = ({ pokemonList }: CardsGridProps) => {
             id={id}
             title={name}
             imageUrl={getPokemonImageUrlFromId(id)}
+            onClick={() => setPokemonIdSelected(id)}
           />
         );
       })}
