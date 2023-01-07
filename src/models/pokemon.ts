@@ -18,7 +18,7 @@ export interface Stat {
 interface Type {
   slot: number;
   type: {
-    name: string; // TODO: Use enum
+    name: PokemonType;
   };
 }
 
@@ -30,4 +30,15 @@ export interface PokemonExtended {
   types: Type[];
   stats: Stat[];
   base_experience: number;
+}
+
+// TODO: Add missing types
+export enum PokemonType {
+  Grass = "grass",
+  Water = "water",
+  Fire = "fire",
+  Poison = "poison",
+  Bug = "bug",
+  Flying = "flying",
+  Normal = "normal",
 }

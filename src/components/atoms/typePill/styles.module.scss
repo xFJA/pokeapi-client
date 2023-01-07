@@ -1,0 +1,52 @@
+@import "./../../../styles/colors.scss";
+
+.root {
+  color: white;
+  text-transform: uppercase;
+  padding: 4px;
+  border-radius: 10px;
+  max-width: fit-content;
+  border: 1px solid;
+}
+
+.grass {
+  composes: root;
+  background-color: $grass;
+  border-color: $grass-dark;
+}
+
+.water {
+  composes: root;
+  background-color: $water;
+  border-color: $water-dark;
+}
+
+.fire {
+  composes: root;
+  background-color: $fire;
+  border-color: $fire-dark;
+}
+
+.poison {
+  composes: root;
+  background-color: $poison;
+  border-color: $poison-dark;
+}
+
+.bug {
+  composes: root;
+  background-color: $bug;
+  border-color: $bug-dark;
+}
+
+.flying {
+  composes: root;
+  background-color: $flying;
+  border-color: $flying-dark;
+}
+
+.normal {
+  composes: root;
+  background-color: $normal;
+  border-color: $normal-dark;
+}

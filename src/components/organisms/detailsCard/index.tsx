@@ -10,12 +10,12 @@ export interface DetailsCardProps {
 }
 
 const DetailsCard = ({ pokemon }: DetailsCardProps) => {
-  const { id, name, stats, height, weight, base_experience } = pokemon;
+  const { id, name, stats, height, weight, base_experience, types } = pokemon;
 
   return (
     <div className={styles.root}>
       <div className={styles.header}>
-        <h1>{`#${id} ${name}`}</h1>
+        <h1 className={styles.title}>{name}</h1>
       </div>
       <img
         className={styles.image}
@@ -27,6 +27,7 @@ const DetailsCard = ({ pokemon }: DetailsCardProps) => {
           experience={base_experience}
           height={height}
           weight={weight}
+          types={types.map((t) => t.type.name)}
         />
       </div>
       <div className={styles.stats}>
