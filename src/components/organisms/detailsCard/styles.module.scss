@@ -1,7 +1,18 @@
 .root {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 40px;
-  background-color: #F8F8F8;
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+@keyframes imgRotate {
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.image {
+  max-width: 200px;
+  animation-name: imgRotate;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
 }

@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { PokemonDetails } from "../../../models/pokemon";
-import PokeApi from "../../../services/pokeapi";
+import { getPokemonImageUrlFromId } from "../../../utils/externalPokemonData";
+import PokemonStats from "../../molecules/pokemonStats";
 import styles from "./styles.module.scss";
 
-const Api = new PokeApi();
-
 export interface DetailsCardProps {
-  pokemonId: string;
+  pokemon: PokemonDetails;
 }
 
-const DetailsCard = ({ pokemonId }: DetailsCardProps) => {
-  const [pokemon, setPokemon] = useState<PokemonDetails>();
+const DetailsCard = ({ pokemon }: DetailsCardProps) => {
+  const { id, name, stats } = pokemon;
 
-  useEffect(() => {
-    Api.getPokemon(pokemonId)
-      .then((res) => setPokemon(res))
-      .catch((err) => console.error(err));
-  }, []);
-
-  return <div className={styles.root}>
-    
-  </div>;
+  return (
+    <div className={styles.root}>
+      <h1>{`#${id} ${name}`}</h1>
+      <img
+        className={styles.image}
+        src={getPokemonImageUrlFromId(id)}
+        alt="sprite"
+      />
+      <PokemonStats stats={stats} />
+    </div>
+  );
 };
 
 export default DetailsCard;

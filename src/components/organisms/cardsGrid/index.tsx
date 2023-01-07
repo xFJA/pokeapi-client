@@ -1,23 +1,33 @@
 import React, { useState } from "react";
-import { Pokemon } from "../../../models/pokemon";
+import { Pokemon, PokemonDetails } from "../../../models/pokemon";
+import PokeApi from "../../../services/pokeapi";
+import { getPokemonImageUrlFromId } from "../../../utils/externalPokemonData";
 import Card from "../../molecules/card";
 import Modal from "../../molecules/modal";
 import DetailsCard from "../detailsCard";
 import styles from "./styles.module.scss";
+
+const Api = new PokeApi();
 
 export interface CardsGridProps {
   pokemonList: Pokemon[];
 }
 
 const CardsGrid = ({ pokemonList }: CardsGridProps) => {
-  const [pokemonIdSelected, setPokemonIdSelected] =
-    useState<string | undefined>(undefined);
+  const [pokemonSelected, setPokemonSelected] =
+    useState<PokemonDetails | undefined>(undefined);
+
+  const handleCardClick = (id: string) => {
+    Api.getPokemon(id)
+      .then((res) => setPokemonSelected(res))
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className={styles.root}>
-      {pokemonIdSelected && (
-        <Modal onBackdropClick={() => setPokemonIdSelected(undefined)}>
-          <DetailsCard pokemonId={pokemonIdSelected} />
+      {pokemonSelected && (
+        <Modal onBackdropClick={() => setPokemonSelected(undefined)}>
+          <DetailsCard pokemon={pokemonSelected} />
         </Modal>
       )}
 
@@ -34,7 +44,7 @@ const CardsGrid = ({ pokemonList }: CardsGridProps) => {
             id={id}
             title={name}
             imageUrl={getPokemonImageUrlFromId(id)}
-            onClick={() => setPokemonIdSelected(id)}
+            onClick={() => handleCardClick(id)}
           />
         );
       })}
@@ -47,12 +57,6 @@ const getPokemonIdFromUrL = (url: string): string | undefined => {
   const urlParts = url.split("/");
   const pokemonId = urlParts.length ? urlParts[urlParts.length - 2] : undefined;
   return pokemonId;
-};
-
-const getPokemonImageUrlFromId = (id: string) => {
-  const pokemonImageBaseUrl =
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-  return pokemonImageBaseUrl.concat(`${id}.png`);
 };
 
 export default CardsGrid;

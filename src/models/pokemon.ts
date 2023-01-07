@@ -23,6 +23,7 @@ interface Type {
 }
 
 export interface PokemonDetails {
+  id: string;
   name: string;
   weight: number;
   height: number;
