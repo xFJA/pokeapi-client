@@ -1,2 +1,10 @@
 .root {
+  background-color: #f8f8f8;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination {
+  margin-left: auto;
 }
