@@ -27,7 +27,7 @@ const PokemonDetails = ({
         value={`${experience.toString()} points`}
       />
       <DetailText title="Weight" value={`${weightInKilograms} Kg`} />
-      <DetailText title="Weight" value={`${heightInMetres} m`} />
+      <DetailText title="Height" value={`${heightInMetres} m`} />
       <div className={styles.types}>
         {types.map((t, i) => {
           return <TypePill key={i} type={t} />;
