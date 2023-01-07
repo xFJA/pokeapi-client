@@ -11,17 +11,21 @@ export interface DetailsCardProps {
 
 const DetailsCard = ({ pokemon }: DetailsCardProps) => {
   const { id, name, stats, height, weight, base_experience, types } = pokemon;
+  const firstType = types[0].type.name;
 
   return (
     <div className={styles.root}>
       <div className={styles.header}>
         <h1 className={styles.title}>{name}</h1>
       </div>
-      <img
-        className={styles.image}
-        src={getPokemonImageUrlFromId(id)}
-        alt="sprite"
-      />
+      <div className={`${styles.imageContainer} ${styles[firstType]}`}>
+        <img
+          className={styles.image}
+          src={getPokemonImageUrlFromId(id)}
+          alt="sprite"
+        />
+      </div>
+
       <div className={styles.details}>
         <PokemonDetails
           experience={base_experience}

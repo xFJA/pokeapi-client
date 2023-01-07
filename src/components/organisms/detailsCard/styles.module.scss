@@ -1,3 +1,5 @@
+@import "./../../../styles/colors.scss";
+
 .root {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -21,12 +23,18 @@
   }
 }
 
-.image {
+.imageContainer {
   grid-area: image;
+  border-radius: 50%;
+  margin: 10%;
+}
+
+.image {
+  transform: scale(1.1);
   animation-name: imgRotate;
   animation-iteration-count: infinite;
   animation-duration: 2s;
-  width: 90%;
+  width: 100%;
 }
 
 .header {
@@ -39,4 +47,81 @@
 
 .title {
   text-transform: capitalize;
+}
+
+//Pokemon types styles
+@mixin generate-radial-gradient-background($color) {
+  background-image: radial-gradient(white, $color);
+}
+
+.grass {
+  @include generate-radial-gradient-background($grass-light);
+}
+
+.fire {
+  @include generate-radial-gradient-background($fire-light);
+}
+
+.water {
+  @include generate-radial-gradient-background($water-light);
+}
+
+.ground {
+  @include generate-radial-gradient-background($ground-light);
+}
+
+.steel {
+  @include generate-radial-gradient-background($steel-light);
+}
+
+.rock {
+  @include generate-radial-gradient-background($rock-light);
+}
+
+.fairy {
+  @include generate-radial-gradient-background($fairy-light);
+}
+
+.electric {
+  @include generate-radial-gradient-background($electric-light);
+}
+
+.flying {
+  @include generate-radial-gradient-background($flying-light);
+}
+
+.fighting {
+  @include generate-radial-gradient-background($fighting-light);
+}
+
+.ghost {
+  @include generate-radial-gradient-background($ghost-light);
+}
+
+.normal {
+  @include generate-radial-gradient-background($normal-light);
+}
+
+.dragon {
+  @include generate-radial-gradient-background($dragon-light);
+}
+
+.dark {
+  @include generate-radial-gradient-background($dark-light);
+}
+
+.bug {
+  @include generate-radial-gradient-background($bug-light);
+}
+
+.poison {
+  @include generate-radial-gradient-background($poison-light);
+}
+
+.ice {
+  @include generate-radial-gradient-background($ice-light);
+}
+
+.psychic {
+  @include generate-radial-gradient-background($psychic-light);
 }
