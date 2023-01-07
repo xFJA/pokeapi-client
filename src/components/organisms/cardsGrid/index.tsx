@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pokemon, PokemonDetails } from "../../../models/pokemon";
+import { Pokemon, PokemonExtended } from "../../../models/pokemon";
 import PokeApi from "../../../services/pokeapi";
 import { getPokemonImageUrlFromId } from "../../../utils/externalPokemonData";
 import Card from "../../molecules/card";
@@ -15,7 +15,7 @@ export interface CardsGridProps {
 
 const CardsGrid = ({ pokemonList }: CardsGridProps) => {
   const [pokemonSelected, setPokemonSelected] =
-    useState<PokemonDetails | undefined>(undefined);
+    useState<PokemonExtended | undefined>(undefined);
 
   const handleCardClick = (id: string) => {
     Api.getPokemon(id)

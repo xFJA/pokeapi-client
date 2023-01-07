@@ -22,11 +22,12 @@ interface Type {
   };
 }
 
-export interface PokemonDetails {
+export interface PokemonExtended {
   id: string;
   name: string;
   weight: number;
   height: number;
   types: Type[];
   stats: Stat[];
+  base_experience: number;
 }

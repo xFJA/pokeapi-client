@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { AllPokemonsPokeApiResponse, PokemonDetails } from "../models/pokemon";
+import { AllPokemonsPokeApiResponse, PokemonExtended } from "../models/pokemon";
 
 class PokeApi {
   axiosBase: AxiosInstance;
@@ -25,9 +25,9 @@ class PokeApi {
     }
   };
 
-  getPokemon = async (id: string): Promise<PokemonDetails> => {
+  getPokemon = async (id: string): Promise<PokemonExtended> => {
     try {
-      const res = await this.axiosBase.get<PokemonDetails>(
+      const res = await this.axiosBase.get<PokemonExtended>(
         `/pokemon/${id}`
       );
       return res.data;

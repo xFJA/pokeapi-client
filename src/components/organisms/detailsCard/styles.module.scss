@@ -1,7 +1,18 @@
 .root {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1.1fr 1.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "image header"
+    "image details"
+    "stats stats";
   padding: 20px;
+}
+
+.stats {
+  grid-area: stats;
 }
 
 @keyframes imgRotate {
@@ -11,8 +22,17 @@
 }
 
 .image {
-  max-width: 200px;
+  grid-area: image;
   animation-name: imgRotate;
   animation-iteration-count: infinite;
   animation-duration: 2s;
+  width: 90%;
+}
+
+.header {
+  grid-area: header;
+}
+
+.details {
+  grid-area: details;
 }
