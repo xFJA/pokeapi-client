@@ -11,9 +11,13 @@ export interface CardProps {
 const Card = ({ id, title, imageUrl, onClick }: CardProps) => {
   return (
     <div className={styles.root} onClick={onClick}>
-      <h1>{`#${id}`}</h1>
-      <img alt="sprite" src={imageUrl} />
-      <h2 className={styles.title}>{title}</h2>
+      <div className={styles.id}>
+        <span>{`#${id}`}</span>
+      </div>
+      <div className={styles.content}>
+        <img alt="sprite" src={imageUrl} />
+        <h2 className={styles.title}>{title}</h2>
+      </div>
     </div>
   );
 };
