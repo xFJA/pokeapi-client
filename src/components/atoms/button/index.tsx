@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 export interface ButtonProps {
   text: string;
-  onClick: any;
+  onClick: () => void;
   disabled?: boolean;
 }
 
