@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./styles.module.scss";
 import { Stat } from "./../../../models/pokemon";
 import ProgressBar from "../../atoms/progressBar";
 
@@ -11,7 +10,7 @@ export interface PokemonStatsProps {
 
 const PokemonStats = ({ stats }: PokemonStatsProps) => {
   return (
-    <div className={styles.root}>
+    <div>
       {stats.map((s, i) => {
         return (
           <ProgressBar
