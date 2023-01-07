@@ -1,16 +1,95 @@
 @import "./../../../styles/colors.scss";
 
+@mixin generate-radial-gradient-background($color) {
+  background-image: radial-gradient(white, $color);
+}
+
 .root {
+  border: 6px solid;
+  border-radius: 20px;
+
+  &.grass {
+    border-color: $grass-light;
+  }
+
+  &.fire {
+    border-color: $fire-light;
+  }
+
+  &.water {
+    border-color: $water-light;
+  }
+
+  &.ground {
+    border-color: $ground-light;
+  }
+
+  &.steel {
+    border-color: $steel-light;
+  }
+
+  &.rock {
+    border-color: $rock-light;
+  }
+
+  &.fairy {
+    border-color: $fairy-light;
+  }
+
+  &.electric {
+    border-color: $electric-light;
+  }
+
+  &.flying {
+    border-color: $flying-light;
+  }
+
+  &.fighting {
+    border-color: $fighting-light;
+  }
+
+  &.ghost {
+    border-color: $ghost-light;
+  }
+
+  &.normal {
+    border-color: $normal-light;
+  }
+
+  &.dragon {
+    border-color: $dragon-light;
+  }
+
+  &.dark {
+    border-color: $dark-light;
+  }
+
+  &.bug {
+    border-color: $bug-light;
+  }
+
+  &.poison {
+    border-color: $poison-light;
+  }
+
+  &.ice {
+    border-color: $ice-light;
+  }
+
+  &.psychic {
+    border-color: $psychic-light;
+  }
+}
+
+.content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 1.1fr 1.4fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "image header"
     "image details"
     "stats stats";
-  padding: 20px;
+  padding: 10px 20px 20px;
 }
 
 .stats {
@@ -27,6 +106,81 @@
   grid-area: image;
   border-radius: 50%;
   margin: 10%;
+  top: -48px;
+  left: -8px;
+  position: relative;
+
+  &.grass {
+    @include generate-radial-gradient-background($grass-light);
+  }
+
+  &.fire {
+    @include generate-radial-gradient-background($fire-light);
+  }
+
+  &.water {
+    @include generate-radial-gradient-background($water-light);
+  }
+
+  &.ground {
+    @include generate-radial-gradient-background($ground-light);
+  }
+
+  &.steel {
+    @include generate-radial-gradient-background($steel-light);
+  }
+
+  &.rock {
+    @include generate-radial-gradient-background($rock-light);
+  }
+
+  &.fairy {
+    @include generate-radial-gradient-background($fairy-light);
+  }
+
+  &.electric {
+    @include generate-radial-gradient-background($electric-light);
+  }
+
+  &.flying {
+    @include generate-radial-gradient-background($flying-light);
+  }
+
+  &.fighting {
+    @include generate-radial-gradient-background($fighting-light);
+  }
+
+  &.ghost {
+    @include generate-radial-gradient-background($ghost-light);
+  }
+
+  &.normal {
+    @include generate-radial-gradient-background($normal-light);
+  }
+
+  &.dragon {
+    @include generate-radial-gradient-background($dragon-light);
+  }
+
+  &.dark {
+    @include generate-radial-gradient-background($dark-light);
+  }
+
+  &.bug {
+    @include generate-radial-gradient-background($bug-light);
+  }
+
+  &.poison {
+    @include generate-radial-gradient-background($poison-light);
+  }
+
+  &.ice {
+    @include generate-radial-gradient-background($ice-light);
+  }
+
+  &.psychic {
+    @include generate-radial-gradient-background($psychic-light);
+  }
 }
 
 .image {
@@ -38,7 +192,87 @@
 }
 
 .header {
-  grid-area: header;
+  text-transform: capitalize;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  border-bottom-left-radius: inherit;
+  border-top-right-radius: 8px;
+  max-width: fit-content;
+  padding: 4px 10px;
+  margin-left: auto;
+
+  &.grass {
+    background-color: $grass-light;
+  }
+
+  &.fire {
+    background-color: $fire-light;
+  }
+
+  &.water {
+    background-color: $water-light;
+  }
+
+  &.ground {
+    background-color: $ground-light;
+  }
+
+  &.steel {
+    background-color: $steel-light;
+  }
+
+  &.rock {
+    background-color: $rock-light;
+  }
+
+  &.fairy {
+    background-color: $fairy-light;
+  }
+
+  &.electric {
+    background-color: $electric-light;
+  }
+
+  &.flying {
+    background-color: $flying-light;
+  }
+
+  &.fighting {
+    background-color: $fighting-light;
+  }
+
+  &.ghost {
+    background-color: $ghost-light;
+  }
+
+  &.normal {
+    background-color: $normal-light;
+  }
+
+  &.dragon {
+    background-color: $dragon-light;
+  }
+
+  &.dark {
+    background-color: $dark-light;
+  }
+
+  &.bug {
+    background-color: $bug-light;
+  }
+
+  &.poison {
+    background-color: $poison-light;
+  }
+
+  &.ice {
+    background-color: $ice-light;
+  }
+
+  &.psychic {
+    background-color: $psychic-light;
+  }
 }
 
 .details {
@@ -47,81 +281,4 @@
 
 .title {
   text-transform: capitalize;
-}
-
-//Pokemon types styles
-@mixin generate-radial-gradient-background($color) {
-  background-image: radial-gradient(white, $color);
-}
-
-.grass {
-  @include generate-radial-gradient-background($grass-light);
-}
-
-.fire {
-  @include generate-radial-gradient-background($fire-light);
-}
-
-.water {
-  @include generate-radial-gradient-background($water-light);
-}
-
-.ground {
-  @include generate-radial-gradient-background($ground-light);
-}
-
-.steel {
-  @include generate-radial-gradient-background($steel-light);
-}
-
-.rock {
-  @include generate-radial-gradient-background($rock-light);
-}
-
-.fairy {
-  @include generate-radial-gradient-background($fairy-light);
-}
-
-.electric {
-  @include generate-radial-gradient-background($electric-light);
-}
-
-.flying {
-  @include generate-radial-gradient-background($flying-light);
-}
-
-.fighting {
-  @include generate-radial-gradient-background($fighting-light);
-}
-
-.ghost {
-  @include generate-radial-gradient-background($ghost-light);
-}
-
-.normal {
-  @include generate-radial-gradient-background($normal-light);
-}
-
-.dragon {
-  @include generate-radial-gradient-background($dragon-light);
-}
-
-.dark {
-  @include generate-radial-gradient-background($dark-light);
-}
-
-.bug {
-  @include generate-radial-gradient-background($bug-light);
-}
-
-.poison {
-  @include generate-radial-gradient-background($poison-light);
-}
-
-.ice {
-  @include generate-radial-gradient-background($ice-light);
-}
-
-.psychic {
-  @include generate-radial-gradient-background($psychic-light);
 }

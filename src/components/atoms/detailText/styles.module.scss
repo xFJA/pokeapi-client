@@ -1,12 +1,13 @@
 .root {
   white-space: nowrap;
+  margin: 6px 0px;
 }
 
 .title {
-  text-transform: capitalize;
   font-weight: bold;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .value {
+  margin-left: auto;
 }

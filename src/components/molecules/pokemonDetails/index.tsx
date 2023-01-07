@@ -22,7 +22,10 @@ const PokemonDetails = ({
 
   return (
     <div>
-      <DetailText title="Base experience" value={experience.toString()} />
+      <DetailText
+        title="Base experience"
+        value={`${experience.toString()} points`}
+      />
       <DetailText title="Weight" value={`${weightInKilograms} Kg`} />
       <DetailText title="Weight" value={`${heightInMetres} m`} />
       <div className={styles.types}>

@@ -14,28 +14,31 @@ const DetailsCard = ({ pokemon }: DetailsCardProps) => {
   const firstType = types[0].type.name;
 
   return (
-    <div className={styles.root}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{name}</h1>
+    <div className={`${styles.root} ${styles[firstType]}`}>
+      <div className={`${styles.header} ${styles[firstType]}`}>
+        <span>{name}</span>
       </div>
-      <div className={`${styles.imageContainer} ${styles[firstType]}`}>
-        <img
-          className={styles.image}
-          src={getPokemonImageUrlFromId(id)}
-          alt="sprite"
-        />
-      </div>
+      <div className={styles.content}>
+        <div className={`${styles.imageContainer} ${styles[firstType]}`}>
+          <img
+            className={styles.image}
+            src={getPokemonImageUrlFromId(id)}
+            alt="sprite"
+          />
+        </div>
 
-      <div className={styles.details}>
-        <PokemonDetails
-          experience={base_experience}
-          height={height}
-          weight={weight}
-          types={types.map((t) => t.type.name)}
-        />
-      </div>
-      <div className={styles.stats}>
-        <PokemonStats stats={stats} />
+        <div className={styles.details}>
+          <PokemonDetails
+            experience={base_experience}
+            height={height}
+            weight={weight}
+            types={types.map((t) => t.type.name)}
+          />
+        </div>
+
+        <div className={styles.stats}>
+          <PokemonStats stats={stats} />
+        </div>
       </div>
     </div>
   );
