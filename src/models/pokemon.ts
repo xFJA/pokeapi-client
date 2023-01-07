@@ -32,7 +32,6 @@ export interface PokemonExtended {
   base_experience: number;
 }
 
-// TODO: Add missing types
 export enum PokemonType {
   Grass = "grass",
   Water = "water",
@@ -41,4 +40,15 @@ export enum PokemonType {
   Bug = "bug",
   Flying = "flying",
   Normal = "normal",
+  Steel = "steel",
+  Ghost = "ghost",
+  Dark = "dark",
+  Dragon = "dragon",
+  Electric = "electric",
+  Ground = "ground",
+  Rock = "rock",
+  Psychic = "psychic",
+  Ice = "ice",
+  Fairy = "fairy",
+  Fighting = "fighting",
 }

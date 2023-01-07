@@ -50,3 +50,73 @@
   background-color: $normal;
   border-color: $normal-dark;
 }
+
+.ghost {
+  composes: root;
+  background-color: $ghost;
+  border-color: $ghost-dark;
+}
+
+.dragon {
+  composes: root;
+  background-color: $dragon;
+  border-color: $dragon-dark;
+}
+
+.steel {
+  composes: root;
+  background-color: $steel;
+  border-color: $steel-dark;
+}
+
+.electric {
+  composes: root;
+  background-color: $electric;
+  border-color: $electric-dark;
+}
+
+.dark {
+  composes: root;
+  background-color: $dark;
+  border-color: $dark-dark;
+}
+
+.psychic {
+  composes: root;
+  background-color: $psychic;
+  border-color: $psychic-dark;
+}
+
+.rock {
+  composes: root;
+  background-color: $rock;
+  border-color: $rock-dark;
+}
+
+.ground {
+  composes: root;
+  background-color: $ground;
+  border-color: $ground-dark;
+}
+
+.ice {
+  composes: root;
+  background-color: $ice;
+  border-color: $ice-dark;
+}
+
+.fighting {
+  composes: root;
+  background-color: $fighting;
+  border-color: $fighting-dark;
+}
+
+
+.fairy {
+  composes: root;
+  background-color: $fairy;
+  border-color: $fairy-dark;
+}
+
+
+
