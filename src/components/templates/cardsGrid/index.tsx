@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Pokemon, PokemonExtended } from "../../../models/pokemon";
 import PokeApi from "../../../services/pokeapi";
 import { getPokemonImageUrlFromId } from "../../../utils/externalPokemonData";
-import Card from "../../molecules/card";
+import Card from "../../atoms/card";
 import Modal from "../../molecules/modal";
-import DetailsCard from "../detailsCard";
+import DetailsCard from "../../organisms/detailsCard";
 import styles from "./styles.module.scss";
 
 const Api = new PokeApi();

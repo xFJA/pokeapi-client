@@ -4,7 +4,7 @@ import CardsGrid from "./index";
 import { Pokemon } from "../../../models/pokemon";
 
 export default {
-  title: "Components/Organisms/CardsGrid",
+  title: "Components/Templates/CardsGrid",
   component: CardsGrid,
 } as ComponentMeta<typeof CardsGrid>;
 

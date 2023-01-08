@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Pagination from "../../components/molecules/pagination";
-import CardsGrid from "../../components/organisms/cardsGrid";
+import CardsGrid from "../../components/templates/cardsGrid";
 import { AllPokemonsPokeApiResponse, Pokemon } from "../../models/pokemon";
 import PokeApi from "../../services/pokeapi";
 import styles from "./styles.module.scss";
