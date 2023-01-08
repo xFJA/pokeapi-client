@@ -44,4 +44,5 @@ The `Storybook` shows all the components used to create the feature for this app
 
 - Add e2e tests
 - Manage error scenarios
+- Add loading component for certain scenarios
 - Setup `EsLint` and `Prettier`
