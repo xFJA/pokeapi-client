@@ -1,6 +1,7 @@
 @import "./../../../styles/colors.scss";
 @import "./../../../styles/variables.scss";
 @import "./../../../styles/mixins";
+@import "./../../../styles/animations";
 
 .root {
   border: 8px solid;
@@ -94,15 +95,13 @@
   grid-area: stats;
 }
 
-@keyframes imgRotate {
-  50% {
-    transform: rotate(3deg);
-  }
-}
-
 .imageContainer {
   grid-area: image;
-  border-radius: 50%;
+
+  animation: morph 8s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  transition: all 1s ease-in-out;
+
   margin: 10%;
   top: -48px;
   left: -8px;
@@ -183,7 +182,7 @@
 
 .image {
   transform: scale(1.1);
-  animation-name: imgRotate;
+  animation-name: light-rotate;
   animation-iteration-count: infinite;
   animation-duration: 2s;
   width: 100%;

@@ -15,7 +15,7 @@ const Card = ({ id, title, imageUrl, onClick }: CardProps) => {
         <span>{`#${id}`}</span>
       </div>
       <div className={styles.content}>
-        <img alt="sprite" src={imageUrl} />
+        <div className={styles.imageContainer}><img alt="sprite" src={imageUrl} /></div>
         <h2 className={styles.title}>{title}</h2>
       </div>
     </div>
