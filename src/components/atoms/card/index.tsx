@@ -10,7 +10,7 @@ export interface CardProps {
 
 const Card = ({ id, title, imageUrl, onClick }: CardProps) => {
   return (
-    <div className={styles.root} onClick={onClick}>
+    <div className={styles.root} onClick={onClick} data-testid="card">
       <div className={styles.id}>
         <span>{`#${id}`}</span>
       </div>

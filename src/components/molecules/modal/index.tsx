@@ -8,10 +8,10 @@ export interface ModalProps {
 
 const Modal = ({ children, onBackdropClick }: ModalProps) => {
   return (
-    <>
+    <div data-testid="modal">
       <div className={styles.modal}>{children}</div>
-      <div className={styles.backdrop} onClick={() => onBackdropClick()}></div>
-    </>
+      <div className={styles.backdrop} onClick={() => onBackdropClick()} data-testid="backdrop"></div>
+    </div>
   );
 };
 
