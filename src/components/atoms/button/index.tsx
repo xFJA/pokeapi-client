@@ -7,12 +7,13 @@ export interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button = ({ text, onClick, disabled = false }: ButtonProps) => {
+const Button = ({ text, onClick, disabled = false, ...restProps }: ButtonProps) => {
   return (
     <button
       className={styles.root}
       onClick={() => onClick()}
       disabled={disabled}
+      {...restProps}
     >
       {text}
     </button>
