@@ -1,0 +1,3 @@
+@mixin generate-radial-gradient-background($color) {
+  background-image: radial-gradient($white, $color);
+}

@@ -1,12 +1,14 @@
 @import "./../../../styles/colors.scss";
+@import "./../../../styles/variables.scss";
 
 .root {
-  color: white;
+  color: $white;
   text-transform: uppercase;
   padding: 4px;
-  border-radius: 10px;
+  border-radius: $border-radius-l;
   max-width: fit-content;
   border: 1px solid;
+  font-weight: bold;
 }
 
 .grass {

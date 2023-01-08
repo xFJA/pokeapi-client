@@ -1,11 +1,10 @@
 @import "./../../../styles/colors.scss";
+@import "./../../../styles/variables";
 
 .root {
-  height: 200;
-  width: 200;
-  border-radius: 12px;
+  border-radius: $border-radius-xl;
   box-shadow: rgb(0 0 0 / 30%) 1.95px 1.95px 9.6px;
-  background-color: white;
+  background-color: $white;
   transition: transform 0.2s;
   border: 1px solid $primary;
 
@@ -22,7 +21,7 @@
 .id {
   font-size: 40px;
   background-color: $primary;
-  color: white;
+  color: $white;
   font-weight: bold;
   border-top-left-radius: inherit;
   border-bottom-right-radius: inherit;

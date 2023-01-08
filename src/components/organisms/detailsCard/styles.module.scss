@@ -1,12 +1,10 @@
 @import "./../../../styles/colors.scss";
-
-@mixin generate-radial-gradient-background($color) {
-  background-image: radial-gradient(white, $color);
-}
+@import "./../../../styles/variables.scss";
+@import "./../../../styles/mixins";
 
 .root {
   border: 6px solid;
-  border-radius: 20px;
+  border-radius: $border-radius-xxl;
 
   &.grass {
     border-color: $grass-light;

@@ -1,10 +1,13 @@
+@import "../../../styles/colors";
+@import "../../../styles/variables";
+
 .root {
-  background: #ff4742;
-  border: 1px solid #ff4742;
-  border-radius: 6px;
+  background: $primary;
+  border: 1px solid $primary;
+  border-radius: $border-radius-m;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
-  color: #ffffff;
+  color: $white;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
@@ -26,7 +29,7 @@
 .root:active {
   background-color: initial;
   background-position: 0 0;
-  color: #ff4742;
+  color: $primary;
 }
 
 .root:active {
@@ -34,7 +37,7 @@
 }
 
 .root:disabled {
-  background-color:  #850a06;
-  color: #ffffff;
+  background-color: $primary-dark;
+  color: $white;
   cursor: not-allowed;
 }
