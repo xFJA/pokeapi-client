@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Pokemon, PokemonExtended } from "../../../models/pokemon";
 import PokeApi from "../../../services/pokeapi";
 import { getPokemonImageUrlFromId } from "../../../utils/externalPokemonData";
+import { getPokemonIdFromUrL } from "../../../utils/url";
 import Card from "../../atoms/card";
 import Modal from "../../molecules/modal";
 import DetailsCard from "../../organisms/detailsCard";
@@ -35,7 +36,6 @@ const CardsGrid = ({ pokemonList }: CardsGridProps) => {
         const { name, url } = p;
         const id = getPokemonIdFromUrL(url);
 
-        // TODO: Manage 'undefined' case (suggestion: show error in the card)
         if (!id) return <></>;
 
         return (
@@ -50,13 +50,6 @@ const CardsGrid = ({ pokemonList }: CardsGridProps) => {
       })}
     </div>
   );
-};
-
-// TODO: Move to /utils folder and add unit tests
-const getPokemonIdFromUrL = (url: string): string | undefined => {
-  const urlParts = url.split("/");
-  const pokemonId = urlParts.length ? urlParts[urlParts.length - 2] : undefined;
-  return pokemonId;
 };
 
 export default CardsGrid;
