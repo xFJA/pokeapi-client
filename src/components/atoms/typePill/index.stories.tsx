@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import TypePill from "./index";
-import { PokemonType } from "../../../models/pokemon";
+import { PokemonType } from "../../../models/features/pokedex";
 
 export default {
   title: "Components/Atoms/TypePill",

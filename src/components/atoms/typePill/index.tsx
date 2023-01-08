@@ -1,5 +1,5 @@
 import React from "react";
-import { PokemonType } from "../../../models/pokemon";
+import { PokemonType } from "../../../models/features/pokedex";
 import styles from "./styles.module.scss";
 
 export interface TypePillProps {

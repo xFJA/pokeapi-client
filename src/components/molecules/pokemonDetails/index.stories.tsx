@@ -1,7 +1,7 @@
 import React, { Children } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import PokemonDetails from "./index";
-import { PokemonType } from "../../../models/pokemon";
+import { PokemonType } from "../../../models/features/pokedex";
 
 export default {
   title: "Components/Molecules/PokemonDetails",

@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import CardsGrid from ".";
-import { Pokemon } from "../../../models/pokemon";
+import { Pokemon } from "../../../models/features/pokedex";
 
 describe("<CardsGrid /> component", () => {
   const pokemonList: Pokemon[] = [

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Pagination from "../../components/molecules/pagination";
 import CardsGrid from "../../components/templates/cardsGrid";
-import { AllPokemonsPokeApiResponse, Pokemon } from "../../models/pokemon";
+import { AllPokemons } from "../../models/features/pokedex";
 import PokeApi from "../../services/pokeapi";
 import styles from "./styles.module.scss";
 
@@ -9,22 +9,15 @@ const Api = new PokeApi();
 
 const PAGINATION_LIMIT = 20;
 
-interface PokedexState {
-  pokemons: Pokemon[];
-  count: number;
-}
-
 const Pokedex = () => {
-  const [pokedexState, setPokedexState] = useState<PokedexState>({
-    pokemons: [],
+  const [pokedexState, setPokedexState] = useState<AllPokemons>({
+    results: [],
     count: 0,
   });
 
   const getAllPokemons = (limit: number, offset: number) => {
     Api.getAll(offset, limit)
-      .then((res: AllPokemonsPokeApiResponse) =>
-        setPokedexState({ pokemons: res.results, count: res.count })
-      )
+      .then((res: AllPokemons) => setPokedexState(res))
       .catch((err) => console.log(err));
   };
 
@@ -44,7 +37,7 @@ const Pokedex = () => {
         />
       </div>
 
-      <CardsGrid pokemonList={pokedexState.pokemons} />
+      <CardsGrid pokemonList={pokedexState.results} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pokemon, PokemonExtended } from "../../../models/pokemon";
+import { Pokemon, PokemonExtended } from "../../../models/features/pokedex";
 import PokeApi from "../../../services/pokeapi";
 import { getPokemonImageUrlFromId } from "../../../utils/externalPokemonData";
 import { getPokemonIdFromUrL } from "../../../utils/url";

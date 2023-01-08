@@ -1,5 +1,5 @@
 import React from "react";
-import { PokemonExtended } from "../../../models/pokemon";
+import { PokemonExtended } from "../../../models/features/pokedex";
 import { getPokemonImageUrlFromId } from "../../../utils/externalPokemonData";
 import PokemonDetails from "../../molecules/pokemonDetails";
 import PokemonStats from "../../molecules/pokemonStats";
@@ -10,8 +10,8 @@ export interface DetailsCardProps {
 }
 
 const DetailsCard = ({ pokemon }: DetailsCardProps) => {
-  const { id, name, stats, height, weight, base_experience, types } = pokemon;
-  const firstType = types[0].type.name;
+  const { id, name, stats, height, weight, baseExperience, types } = pokemon;
+  const firstType = types[0];
 
   return (
     <div className={`${styles.root} ${styles[firstType]}`}>
@@ -29,10 +29,10 @@ const DetailsCard = ({ pokemon }: DetailsCardProps) => {
 
         <div className={styles.details}>
           <PokemonDetails
-            experience={base_experience}
+            experience={baseExperience}
             height={height}
             weight={weight}
-            types={types.map((t) => t.type.name)}
+            types={types}
           />
         </div>
 

@@ -1,7 +1,7 @@
 import React, { Children } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import CardsGrid from "./index";
-import { Pokemon } from "../../../models/pokemon";
+import { Pokemon } from "../../../models/features/pokedex";
 
 export default {
   title: "Components/Templates/CardsGrid",

@@ -1,4 +1,4 @@
-export interface AllPokemonsPokeApiResponse {
+export interface AllPokemons {
   count: number;
   results: Pokemon[];
 }
@@ -8,28 +8,19 @@ export interface Pokemon {
   url: string;
 }
 
-export interface Stat {
-  base_stat: number;
-  stat: {
-    name: string;
-  };
-}
-
-interface Type {
-  slot: number;
-  type: {
-    name: PokemonType;
-  };
-}
-
 export interface PokemonExtended {
   id: string;
   name: string;
   weight: number;
   height: number;
-  types: Type[];
+  types: PokemonType[];
   stats: Stat[];
-  base_experience: number;
+  baseExperience: number;
+}
+
+export interface Stat {
+  baseStat: number;
+  name: string;
 }
 
 export enum PokemonType {

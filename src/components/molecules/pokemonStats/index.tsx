@@ -1,5 +1,5 @@
 import React from "react";
-import { Stat } from "./../../../models/pokemon";
+import { Stat } from "../../../models/features/pokedex";
 import ProgressBar from "../../atoms/progressBar";
 
 const POKEMON_STAT_DEFAULT_MAX_LIMIT = 255;
@@ -15,9 +15,9 @@ const PokemonStats = ({ stats }: PokemonStatsProps) => {
         return (
           <ProgressBar
             key={i}
-            value={s.base_stat}
+            value={s.baseStat}
             limit={POKEMON_STAT_DEFAULT_MAX_LIMIT}
-            title={s.stat.name}
+            title={s.name}
           />
         );
       })}

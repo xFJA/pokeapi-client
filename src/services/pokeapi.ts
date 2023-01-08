@@ -1,5 +1,12 @@
 import axios, { AxiosInstance } from "axios";
-import { AllPokemonsPokeApiResponse, PokemonExtended } from "../models/pokemon";
+import {
+  AllPokemons,
+  Pokemon,
+  PokemonExtended,
+  Stat,
+  PokemonType,
+} from "../models/features/pokedex";
+import { AllPokemonsDTO, PokemonExtendedDTO } from "../models/services/pokeapi";
 
 class PokeApi {
   axiosBase: AxiosInstance;
@@ -11,15 +18,23 @@ class PokeApi {
     this.axiosBase = axiosInstance;
   }
 
-  getAll = async (
-    offset: number,
-    limit: number
-  ): Promise<AllPokemonsPokeApiResponse> => {
+  getAll = async (offset: number, limit: number): Promise<AllPokemons> => {
     try {
-      const res = await this.axiosBase.get<AllPokemonsPokeApiResponse>(
+      const res = await this.axiosBase.get<AllPokemonsDTO>(
         `/pokemon?offset=${offset}&limit=${limit}`
       );
-      return res.data;
+
+      const allPokemonsDTO = res.data;
+
+      const allPokemons: AllPokemons = {
+        count: allPokemonsDTO.count,
+        results: allPokemonsDTO.results.map((r) => ({
+          name: r.name,
+          url: r.url,
+        })) as Pokemon[],
+      };
+
+      return allPokemons;
     } catch (err) {
       throw new Error(JSON.stringify(err));
     }
@@ -27,10 +42,28 @@ class PokeApi {
 
   getPokemon = async (id: string): Promise<PokemonExtended> => {
     try {
-      const res = await this.axiosBase.get<PokemonExtended>(
+      const res = await this.axiosBase.get<PokemonExtendedDTO>(
         `/pokemon/${id}`
       );
-      return res.data;
+
+      const pokemonExtendedDTO = res.data;
+
+      const pokemonExtended: PokemonExtended = {
+        id: pokemonExtendedDTO.id,
+        height: pokemonExtendedDTO.height,
+        weight: pokemonExtendedDTO.weight,
+        baseExperience: pokemonExtendedDTO.base_experience,
+        name: pokemonExtendedDTO.name,
+        stats: pokemonExtendedDTO.stats.map((s) => ({
+          baseStat: s.base_stat,
+          name: s.stat.name,
+        })) as Stat[],
+        types: pokemonExtendedDTO.types.map(
+          (t) => t.type.name
+        ) as PokemonType[],
+      };
+
+      return pokemonExtended;
     } catch (err) {
       throw new Error(JSON.stringify(err));
     }
