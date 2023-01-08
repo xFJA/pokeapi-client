@@ -31,7 +31,7 @@ const Pagination = ({ count, limit, onMakeRequest }: PaginationProps) => {
 
   return (
     <div className={styles.root}>
-      <span data-testid="pagination-text">{`${min}-${max} of ${count}`}</span>
+      <span className={styles.text} data-testid="pagination-text">{`${min}-${max} of ${count}`}</span>
       <div className={styles.prevButton}>
         <Button
           text="PREV"
